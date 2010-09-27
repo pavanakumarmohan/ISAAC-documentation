@@ -1,0 +1,30 @@
+# Doxygen file for ISAAC CFD Project
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "ISAAC CFD"
+PROJECT_NUMBER         = v1.4
+OUTPUT_DIRECTORY       = doc
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+OPTIMIZE_FOR_FORTRAN   = YES
+INPUT                  = header/ main/ march/ turb/ explicit/ implicit/ rhs/
+FILE_PATTERNS          = *.F \
+			 *.f \ 
+			 *.f90 \
+			 *.f77
+
+RECURSIVE              = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCES_LINK_SOURCE = YES
+VERBATIM_HEADERS       = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_ALIGN_MEMBERS     = YES
+HTML_DYNAMIC_SECTIONS  = YES
+SEARCHENGINE           = YES
+
