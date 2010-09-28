@@ -1,0 +1,33 @@
+#! /usr/bin/wish -f
+
+global GotSelection
+set GotSelection 0
+
+frame .fr -width 10c -height 5c 	;#main window
+wm title . "Simple Text Editor V 0"
+pack .fr
+
+#configure menubar on top
+frame .menubar -relief raised -bd 2
+pack .menubar -in .fr -fill x
+frame .edf 
+
+#put a text widget with scroll bars
+
+text .ed_out -width 80 -height 20 -bg grey \
+	     -yscrollcommand ".ys set" \
+	     -state disabled
+text .ed_in -width 80 -height 20 -bg grey \
+	     -yscrollcommand ".ys set" 
+
+scrollbar .ys -command ".ed yview" 
+button .b_exit -text "Exit" -command exit
+button .b_exec -text "Execute"
+
+
+pack .ed_out .ys -in .edf -side left -fill y
+pack .ed_in .ys -in .edf -side left -fill y
+pack .b_exit 
+pack .b_exec 
+pack .edf -in .fr -after .menubar -fill x
+
