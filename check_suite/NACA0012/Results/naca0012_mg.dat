@@ -1,0 +1,39 @@
+'RESTART OUT'   1
+     'naca0012.rst1'
+'PLOT3D'  0
+     'FORMATTED'
+     'naca0012'
+'MACH'       0.8e0
+'ALPHA'      1.25
+'KAPPA'      0.3333333333E0
+'LIMIT'      3
+'MULTIGRID LEVELS' 3
+'MESH SEQUENCE'    2
+     50
+     50
+'NITS'       500
+'CFL'        10.0
+'ITUPDT'     5
+'TWOD'       1
+'BLOCK'      1
+     'DIMENSIONS'       1
+           225      33       2
+     'FLUX'    1
+          'ROE'        1
+     'GRID'       1
+          'n12_225_33.grd'
+     'BC'         6
+          'BC'      33   1   1      193   1   2   'TANGENCY'
+          'BC'       1  33   1      225  33   2   'FARFIELD'
+          'BC'       1   1   1        1  33   2   'EXTRAPOLATE'
+          'BC'     225   1   1      225  33   2   'EXTRAPOLATE'
+          'BC'       1   1   1      225  33   1   'EXTRAPOLATE'
+          'BC'       1   1   2      225  33   2   'EXTRAPOLATE'
+'END BLOCK'    1
+'CUT'   1.
+     'ONE'     1       1   1   1       33   1   2
+     'ONE'     1     225   1   1      193   1   2       1  2  3
+'PRINT'    2
+      1       1          1    1    2    226   1    2      1  1  1
+      1       2         33    1    2    193   34   2     40  1  1
+'END'       0

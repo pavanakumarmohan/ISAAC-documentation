@@ -1,0 +1,48 @@
+'RESTART IN' 1
+     'kw.rst2'
+'RESTART OUT' 1
+     'kw.rst3'
+'RE'         4.2e6
+'PR'         0.7200000E+00
+'SOLVER'     1
+     'DIAGONAL AF3F'      1
+'SIUNIT'     1
+'TINF'      300.e0
+'MACH'       0.2e0
+'ALPHA'      0.0
+'BETA'       0.0
+'KAPPA'      0.3333333333E0
+'LIMIT'      3
+'NITS'       0
+'CFL'        1.00
+'CFLFNL'     20.00
+'ITDFNL'     50
+'ITUPDT'     5
+'TWOD'       1
+'THIN LAYER' 1
+'REYNOLDS STRESS'  0
+'CONVERT'    1
+     'K OMEGA'  0
+'GRID'       1
+          'flatplate.grd'
+'BLOCK'      1
+     'DIMENSIONS'       1
+           65      65       2
+     'FLUX'    1
+          'ROE'        1
+     'VISCOUS'    1
+           2
+     'BC'         7
+          'BC'       1   1   1      65  65  1   'EXTRAPOLATE'
+          'BC'       1   1   2      65  65  2   'EXTRAPOLATE'
+          'BC'       1   1   1      17   1  2   'SYMMETRY XZ'
+          'BC'      17   1   1      65   1  2   'WALL'
+          'BC'       1  65   1      65  65  2   'EXTRAPOLATE'
+          'BC'       1   1   1       1  65  2   'SUBSONIC INFLOW'
+          'BC'      65   1   1      65  65  2   'SUBSONIC OUTFLOW'
+     'END BLOCK'    1
+'PRINT'    1
+       1       2    49   1   2      49  65  2       1  1  1
+'MONITOR'  0
+      20000
+'END'       0
