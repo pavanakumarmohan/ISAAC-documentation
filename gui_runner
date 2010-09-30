@@ -15,19 +15,26 @@ frame .edf
 #put a text widget with scroll bars
 
 text .ed_out -width 80 -height 20 -bg grey \
-	     -yscrollcommand ".ys set" \
-	     -state disabled
-text .ed_in -width 80 -height 20 -bg grey \
-	     -yscrollcommand ".ys set" 
+	     -yscrollcommand ".ys_out set"
+ 
+text .ed_in -width 80 -bg grey \
+ 	     -yscrollcommand ".ys_in set" 
 
-scrollbar .ys -command ".ed yview" 
+scrollbar .ys_out -command ".ed_out yview" 
+scrollbar .ys_in -command ".ed_in yview" 
+
 button .b_exit -text "Exit" -command exit
-button .b_exec -text "Execute"
+button .b_exec -text "Execute" -command execute
 
-
-pack .ed_out .ys -in .edf -side left -fill y
-pack .ed_in .ys -in .edf -side left -fill y
+pack .ed_out .ys_out -in .edf -side left -fill y
+pack .ed_in .ys_in -in .edf -side left -fill y
 pack .b_exit 
 pack .b_exec 
 pack .edf -in .fr -after .menubar -fill x
 
+proc execute { } {
+ global isaac_input
+ set isaac_input [.ed_in get 0.0 end]
+ #.ed_out insert 1.0 $isaac_input 
+ .ed_out insert end $isaac_input
+}
