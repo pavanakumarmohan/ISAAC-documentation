@@ -1,0 +1,6 @@
+This is a fork of the original ISAAC code by Dr. Joseph Morrison
+================================================================
+
+make html --> Make the source code documentation
+make --> Build the source code
+
