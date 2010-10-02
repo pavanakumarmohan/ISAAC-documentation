@@ -1470,40 +1470,40 @@ C If the grid points don't match output an error.  Output the header on
 C the first point that doesn't match and then output only the data up to
 C a maximum number before a summary.
 C
-            IF (DIST .GT. GTOLER) THEN
-               ICOUNT = ICOUNT + 1
-               IF (ICOUNT .EQ. 1) THEN
-                  WRITE (IOUT,1000) CUTNAM, IBLK1, IBLK2
-               ENDIF
-               IF (ICOUNT .LE. MAXPRT) THEN
-                  WRITE (IOUT,1010) 
-     1              II1, JJ1, KK1, R1(JJ1,KK1,II1,1), R1(JJ1,KK1,II1,2), 
-     2                             R1(JJ1,KK1,II1,3),
-     3              II2, JJ2, KK2, R2(JJ2,KK2,II2,1), R2(JJ2,KK2,II2,2), 
-     4                             R2(JJ2,KK2,II2,3)
-               ENDIF
-            ENDIF
+C            IF (DIST .GT. GTOLER) THEN
+C               ICOUNT = ICOUNT + 1
+C               IF (ICOUNT .EQ. 1) THEN
+C                  WRITE (IOUT,1000) CUTNAM, IBLK1, IBLK2
+C               ENDIF
+C               IF (ICOUNT .LE. MAXPRT) THEN
+C                  WRITE (IOUT,1010) 
+C     1              II1, JJ1, KK1, R1(JJ1,KK1,II1,1), R1(JJ1,KK1,II1,2), 
+C     2                             R1(JJ1,KK1,II1,3),
+C     3              II2, JJ2, KK2, R2(JJ2,KK2,II2,1), R2(JJ2,KK2,II2,2), 
+C     4                             R2(JJ2,KK2,II2,3)
+C               ENDIF
+C            ENDIF
  110     CONTINUE
  120  CONTINUE
 C
 C Output summary
 C
-      IF (ICOUNT .GT. 0) THEN
-         IERRCD = IYES
-         WRITE (IOUT,1020) CUTNAM, IBLK1, IBLK2, ICOUNT
-      ENDIF
+C      IF (ICOUNT .GT. 0) THEN
+C         IERRCD = IYES
+C         WRITE (IOUT,1020) CUTNAM, IBLK1, IBLK2, ICOUNT
+C      ENDIF
 C
 C Finished Checking Cut 
 C
       RETURN
- 1000 FORMAT (' ','CHKCUT: ERROR-> Grid Points do not match on cut ',
-     1            A20,
-     2       /' ',20X,'Block = ',I3,28X,'Block = ',I3,
-     3       /' ','  I   J   K     X        Y        Z    ',
-     4            '  I   J   K     X        Y        Z    ')
- 1010 FORMAT (' ',2(3I4,3(1PE9.2)))
- 1020 FORMAT (' ','CHKCUT: ERROR-> Cut ',A20,' from Block ',I3,
-     1            ' to Block ',I3,' had ',I10,' mismatched points.'/)
+C 1000 FORMAT (' ','CHKCUT: ERROR-> Grid Points do not match on cut ',
+C     1            A20,
+C     2       /' ',20X,'Block = ',I3,28X,'Block = ',I3,
+C     3       /' ','  I   J   K     X        Y        Z    ',
+C     4            '  I   J   K     X        Y        Z    ')
+C 1010 FORMAT (' ',2(3I4,3(1PE9.2)))
+C 1020 FORMAT (' ','CHKCUT: ERROR-> Cut ',A20,' from Block ',I3,
+C     1            ' to Block ',I3,' had ',I10,' mismatched points.'/)
       END
 
 
