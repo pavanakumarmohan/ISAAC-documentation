@@ -177,7 +177,7 @@ C
 C
 C     Add the flux contributions to the residual.
 C
-            CALL FDS (IFLUX, NPTS, QP, QM, STEMP, F)
+	CALL FDS(IFLUX,ITURB,NPTS,QP,QM,STEMP,DQP,DQM,F)
 C
             DO 160 I = IPSTRT - 1, IPEND
                DO 140 J = 2, JDIM
