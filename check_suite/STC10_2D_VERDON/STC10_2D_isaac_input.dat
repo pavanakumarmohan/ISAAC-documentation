@@ -1,0 +1,142 @@
+'RESTART IN'  1
+     'STC10zonalBP1_12_60i.rst3'
+'RESTART OUT'  1
+     'STC10zonalBP1_12_60i.rst4'
+'PLOT3D'  1
+     'FORMATTED'
+     'STC10zonalBP1_12_60i'
+'GRID FORMATTED'  0
+     'GRID'  1
+     'stc10coarse.fmt' 
+'SIUNIT'     1
+'RE'         11.61601262E+06 
+'ALPHA'      60.
+'TINF'       300.e0 
+'MACH'       0.7e0
+'PR'         0.69E+00
+'KAPPA'      0.3333333333E0
+'LIMIT'      3.
+'NITS'       15000
+'CFL'        0.8
+'MULTIGRID LEVELS' 1
+'ITUPDT'     100
+'TWOD'       1
+'BACK PRESSURE' 1.12
+'BLOCK'      1
+'DIMENSIONS'       1
+          40       25       2
+     'FLUX'    1
+          'ROE'        1
+     'BC'         3
+          'BC'       1   1   1        1  25   2   'FIX'
+          'BC'       1   1   1       40  25   1   'EXTRAPOLATE'
+          'BC'       1   1   2       40  25   2   'EXTRAPOLATE'
+'END BLOCK'    1          
+'BLOCK'      2
+'DIMENSIONS'       2
+          49       25       2
+     'FLUX'    2
+          'ROE'        1
+     'BC'         3
+          'BC'       1  25   1       49  25   2   'TANGENCY'
+          'BC'       1   1   1       49  25   1   'EXTRAPOLATE'
+          'BC'       1   1   2       49  25   2   'EXTRAPOLATE'
+'END BLOCK'    2          
+'BLOCK'      3
+'DIMENSIONS'       3
+          37       25       2
+     'FLUX'    3
+          'ROE'        1
+     'BC'         3
+          'BC'      37   1   1       37  25   2   'SUBSONIC OUTFLOW'
+          'BC'       1   1   1       37  25   1   'EXTRAPOLATE'
+          'BC'       1   1   2       37  25   2   'EXTRAPOLATE'
+'END BLOCK'    3
+'BLOCK'      4
+'DIMENSIONS'       4
+          40       19       2
+     'FLUX'    4
+          'ROE'        1
+     'BC'         3
+          'BC'       1   1   1        1  19   2   'FIX'
+          'BC'       1   1   1       40  19   1   'EXTRAPOLATE'
+          'BC'       1   1   2       40  19   2   'EXTRAPOLATE'
+'END BLOCK'    4
+'BLOCK'      5
+'DIMENSIONS'       5
+          49       19       2
+     'FLUX'    5
+          'ROE'        1
+     'BC'         3
+          'BC'       1   1   1       49   1   2   'TANGENCY'
+          'BC'       1   1   1       49  19   1   'EXTRAPOLATE'
+          'BC'       1   1   2       49  19   2   'EXTRAPOLATE'
+'END BLOCK'    5                   
+'BLOCK'      6
+'DIMENSIONS'       6
+          37       19       2
+     'FLUX'    6
+          'ROE'        1
+     'BC'         3
+          'BC'      37   1   1       37  19   2   'SUBSONIC OUTFLOW'
+          'BC'       1   1   1       37  19   1   'EXTRAPOLATE'
+          'BC'       1   1   2       37  19   2   'EXTRAPOLATE'
+'END BLOCK'    6
+'BLOCK'      7
+'DIMENSIONS'       7
+          40       11       2
+     'FLUX'    7
+          'ROE'        1
+     'BC'         4
+          'BC'       1   1   1        1  11   2   'FIX'
+          'BC'      40   1   1       40  11   2   'TANGENCY'
+          'BC'       1   1   1       40  11   1   'EXTRAPOLATE'
+          'BC'       1   1   2       40  11   2   'EXTRAPOLATE'
+'END BLOCK'    7
+'BLOCK'      8
+'DIMENSIONS'       8
+          37       11       2
+     'FLUX'    8
+          'ROE'        1
+     'BC'         4
+          'BC'       1   1   1        1  11   2   'TANGENCY'
+          'BC'      37   1   1       37  11   2   'SUBSONIC OUTFLOW'
+          'BC'       1   1   1       37  11   1   'EXTRAPOLATE'
+          'BC'       1   1   2       37  11   2   'EXTRAPOLATE'
+'END BLOCK'    8
+'CUT'   11
+     'UPPERIN'     4       1   1   1       40   1   2
+     'UPPERIN'     7       1  11   1       40  11   2       1  2  3
+     
+     'LOWERIN'     7       1   1   1       40   1   2
+     'LOWERIN'     1       1  25   1       40  25   2       1  2  3
+     
+     'INSUCTION'   4      40   1   1       40  19   2 
+     'INSUCTION'   5       1   1   1        1  19   2       1  2  3
+     
+     'INPRESSURE'  1      40   1   1       40  25   2
+     'INPRESSURE'  2       1   1   1        1  25   2       1  2  3
+     
+     'OUTSUCTION'  5      49   1   1       49  19   2        
+     'OUTSUCTION'  6       1   1   1        1  19   2       1  2  3
+     
+     'UPPEROUT'    6       1   1   1       37   1   2 
+     'UPPEROUT'    8       1  11   1       37  11   2       1  2  3
+     
+     'LOWEROUT'    8       1   1   1       37   1   2  
+     'LOWEROUT'    3       1  25   1       37  25   2       1  2  3
+     
+     'OUTPRESSURE' 2      49   1   1       49   25  2
+     'OUTPRESSURE' 3       1   1   1        1   25  2       1  2  3  
+     
+     'P1'          1       1   1   1       40   1   2   
+     'P1'          4       1  19   1       40  19   2       1  2  3
+     
+     'P2'          2       1   1   1       49   1   2   
+     'P2'          5       1  19   1       49  19   2       1  2  3
+
+     'P3'          3       1   1   1       37   1   2   
+     'P3'          6       1  19   1       37  19   2       1  2  3
+
+'END'       0
+
